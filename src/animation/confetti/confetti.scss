@@ -1,4 +1,4 @@
-
+@use "sass:math";
 
 .confetti {
   width: 440px;
@@ -23,13 +23,13 @@
  &.animated {
     @for $p from 1 through 200 {
       p:nth-of-type(#{$p}) {
-        transform:  skewY(random(50)+deg) 
-          rotate(random(360)+deg) 
-          translate(random(100) + px, random(500) * -5 + px) scale(calc(random(5)/10));
-        background: hsla(random(360),100%,50%,1);
+        transform:  skewY(math.random(50)+deg) 
+          rotate(math.random(360)+deg) 
+          translate(math.random(100) + px, math.random(500) * -5 + px) scale(calc(math.random(5)/10));
+        background: hsla(math.random(360),100%,50%,1);
         animation:2s bang infinite;
-        animation-delay: calc(random(5)/20)+s;
-        bottom:random(10)+px;
+        animation-delay: calc(math.random(5)/20)+s;
+        bottom:math.random(10)+px;
         opacity: 0.3;
       }
     }
