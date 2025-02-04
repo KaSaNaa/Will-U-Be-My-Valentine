@@ -6,7 +6,7 @@ import GiftBoxAnimation from "../animation/GiftBoxAnimation";
 import HeartRain from "../animation/HeartRain";
 
 const GiftPage: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [ , setIsOpen] = useState(false);
   const [message, setMessage] = useState("You have a gift from Chuttaa!");
 
   const handleBoxClick = () => {
