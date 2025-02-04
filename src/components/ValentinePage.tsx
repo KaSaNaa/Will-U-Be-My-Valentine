@@ -31,11 +31,15 @@ const ValentinePage: React.FC<ValentinePageProps> = ({
     } else if (response === "no") {
       navigator.vibrate([200, 100, 200]);
       const cryingAudio = new Audio("/src/assets/crying.mp3");
-      cryingAudio.loop = true;
-      cryingAudio.play();
       if (onNoClick) {
         onNoClick();
       }
+      cryingAudio.play();
+      cryingAudio.onended = () => {
+        const cryingAudio2 = new Audio("/src/assets/crying.mp3");
+        cryingAudio2.play();
+        
+      };
     }
   };
 
