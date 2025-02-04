@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BackgroundContainer from "./BackgroundContainer";
 import BackgroundImages from "./BackgroundImages";
 import { Box, Typography } from "@mui/material";
 import GiftBoxAnimation from "../animation/GiftBoxAnimation";
+import HeartRain from "../animation/HeartRain";
 
 const GiftPage: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,11 +11,17 @@ const GiftPage: React.FC = () => {
 
   const handleBoxClick = () => {
     setIsOpen(true);
-    setMessage("Be ready by 6pm, princess!")
+    setMessage("Be ready by 6pm, princess!");
   };
+
+  useEffect(() => {
+    const audio = new Audio("/src/assets/song.mp3");
+    audio.play();
+  }, []);
 
   return (
     <BackgroundContainer>
+      <HeartRain />
       <BackgroundImages />
       <Box
         sx={{
@@ -46,7 +53,8 @@ const GiftPage: React.FC = () => {
             cursor: "pointer",
           }}
           onClick={handleBoxClick}
-        ><GiftBoxAnimation />
+        >
+          <GiftBoxAnimation />
         </Box>
       </Box>
     </BackgroundContainer>
