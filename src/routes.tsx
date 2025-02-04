@@ -13,7 +13,7 @@ const RoutesPage: React.FC = () => {
         <Route path="/" element={<App setAccessGranted={setAccessGranted} />} />
         <Route
           path="/gift"
-          element={true ? <GiftPage /> : <Navigate to="/" />}
+          element={accessGranted ? <GiftPage /> : <Navigate to="/" />}
         />
       </Routes>
     </Router>
