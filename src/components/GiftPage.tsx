@@ -6,9 +6,11 @@ import GiftBoxAnimation from "../animation/GiftBoxAnimation";
 
 const GiftPage: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [message, setMessage] = useState("You have a gift from your chuttaa!");
 
   const handleBoxClick = () => {
     setIsOpen(true);
+    setMessage("Be ready by 6pm, princess!")
   };
 
   return (
@@ -34,7 +36,7 @@ const GiftPage: React.FC = () => {
             marginBottom: { xs: "50px", sm: "75px", md: "100px" }, // Responsive margin bottom
           }}
         >
-          You have a gift from your chuttaa!
+          {message}
         </Typography>
         <Box
           sx={{
