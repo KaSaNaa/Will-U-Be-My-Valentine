@@ -1,35 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import Button from './components/Button';
+import styled from 'styled-components';
 
-function App() {
-  const [count, setCount] = useState(0)
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url('./assets/pppixelate.svg');
+  font-family: 'Press Start 2P', cursive;
+`;
+
+const GiftBox = styled.div`
+  width: 300px;
+  height: 300px;
+  background-color: #ffeb3b;
+  border: 2px solid #000;
+  margin-top: 20px;
+  text-align: center;
+  line-height: 300px;
+  font-size: 24px;
+  border-radius: 10px;
+`;
+
+const App: React.FC = () => {
+  const [isYesLarge, setIsYesLarge] = useState(false);
+  const [showGift, setShowGift] = useState(false);
+
+  const handleNoClick = () => {
+    setIsYesLarge(true);
+  };
+
+  const handleYesClick = () => {
+    setShowGift(true);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Container>
+      <h1>Will you be my Valentine?</h1>
+      <Button large={isYesLarge.toString()} onClick={handleYesClick}>Yes</Button>
+      {!isYesLarge && <Button onClick={handleNoClick}>No</Button>}
+      {showGift && <GiftBox>🎁 Movie Tickets Inside! 🎁</GiftBox>}
+    </Container>
+  );
+};
 
-export default App
+export default App;
