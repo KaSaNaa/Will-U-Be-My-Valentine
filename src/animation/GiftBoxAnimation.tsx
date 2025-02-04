@@ -1,8 +1,8 @@
 import React, { useReducer } from "react";
 import "./styles.css";
 
-import box from "./images/box.png";
-import boxLid from "./images/box-lid.png";
+import box from "../assets/box.png";
+import boxLid from "../assets/lid.png";
 import tickets from "../assets/tickets.png";
 import Confetti from "./confetti/Confetti";
 
