@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #f06a19;
+}
+
+.box {
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.box img {
+  margin: -5px;
+}
+
+.tickets {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%) scale(0.1); /* Start small */
+  bottom: 0;
+  z-index: -1;
+  transition: transform 1s ease-in-out; /* Smooth transition */
+}
+
+.tickets.animated {
+  transform: translate(-50%, -200px) scale(1); /* Move up and scale up */
+}
+
+.lid {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 5.8em;
+}
+
+.jump {
+  animation: 1s jump infinite alternate;
+}
+
+.move {
+  animation: 1s wiggle infinite linear;
+}
+
+.rotating {
+  animation: 1s rotating;
+}
+
+.rotated {
+  transform: rotate(145deg) translate(-70%, -170px);
+}
+
+@keyframes wiggle {
+  10%,
+  90% {
+    transform: translate(-50%) translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate(-50%) translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate(-50%) translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate(-50%) translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg) translate(-50%, 0);
+  }
+
+  100% {
+    transform: rotate(145deg) translate(-70%, -170px);
+  }
+}
+
+@keyframes jump {
+  from {
+    bottom: 0;
+  }
+  to {
+    bottom: 20em;
+  }
+}

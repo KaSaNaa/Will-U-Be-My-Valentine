@@ -1,0 +1,44 @@
+
+
+.confetti {
+  width: 440px;
+  margin:500px auto 0;
+  text-align: center;
+  padding: 10px 0;
+  cursor: pointer;
+  position: absolute;
+  bottom:4em;
+  left :50%;
+  transform:translate(-50%);
+
+  p {
+    position: absolute;
+    display: block;
+    left: 50%;
+    bottom: 0;
+    width: 5px;
+    height: 8px;
+    opacity: 0.8;
+  }
+ &.animated {
+    @for $p from 1 through 200 {
+      p:nth-of-type(#{$p}) {
+        transform:  skewY(random(50)+deg) 
+          rotate(random(360)+deg) 
+          translate(random(100) + px, random(500) * -5 + px) scale(calc(random(5)/10));
+        background: hsla(random(360),100%,50%,1);
+        animation:2s bang infinite;
+        animation-delay: calc(random(5)/20)+s;
+        bottom:random(10)+px;
+        opacity: 0.3;
+      }
+    }
+  }
+}
+
+@keyframes bang {
+  from {
+    transform: translate3d(0,0,0);
+    opacity: 1;
+  }
+}
