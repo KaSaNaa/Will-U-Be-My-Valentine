@@ -1,20 +1,20 @@
-import styled from 'styled-components';
+import React from 'react';
+import { Button as MuiButton, SxProps } from '@mui/material';
 
-const Button = styled.button<{ large?: boolean }>`
-  background-color: #ff69b4;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  width: ${({ large }) => (large ? '100vw' : 'auto')};
-  height: ${({ large }) => (large ? '100vh' : 'auto')};
-  font-size: ${({ large }) => (large ? '32px' : '16px')};
-`;
+interface ButtonProps {
+  text: 'Yes' | 'No';
+  onClick: () => void;
+  sx?: SxProps;
+}
+
+const Button: React.FC<ButtonProps> = ({ text, onClick, sx }) => {
+  const buttonClass = text === 'Yes' ? 'MuiButton-yes' : 'MuiButton-no';
+
+  return (
+    <MuiButton className={buttonClass} onClick={onClick} sx={sx}>
+      {text}
+    </MuiButton>
+  );
+};
 
 export default Button;

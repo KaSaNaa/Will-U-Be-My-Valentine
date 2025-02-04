@@ -1,48 +1,39 @@
-import React, { useState } from 'react';
-import Button from './components/Button';
-import styled from 'styled-components';
+import React from "react";
+import BackgroundContainer from "./components/BackgroundContainer";
+import Button from "./components/Button";
+import { Box, Typography } from "@mui/material";
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-image: url('./assets/pppixelate.svg');
-  font-family: 'Press Start 2P', cursive;
-`;
-
-const GiftBox = styled.div`
-  width: 300px;
-  height: 300px;
-  background-color: #ffeb3b;
-  border: 2px solid #000;
-  margin-top: 20px;
-  text-align: center;
-  line-height: 300px;
-  font-size: 24px;
-  border-radius: 10px;
-`;
+const handleOnClick = () => {
+  alert("Yay! I love you too!");
+};
 
 const App: React.FC = () => {
-  const [isYesLarge, setIsYesLarge] = useState(false);
-  const [showGift, setShowGift] = useState(false);
-
-  const handleNoClick = () => {
-    setIsYesLarge(true);
-  };
-
-  const handleYesClick = () => {
-    setShowGift(true);
-  };
-
   return (
-    <Container>
-      <h1>Will you be my Valentine?</h1>
-      <Button large={isYesLarge.toString()} onClick={handleYesClick}>Yes</Button>
-      {!isYesLarge && <Button onClick={handleNoClick}>No</Button>}
-      {showGift && <GiftBox>🎁 Movie Tickets Inside! 🎁</GiftBox>}
-    </Container>
+    <BackgroundContainer>
+      <Typography
+      variant="h5"
+      align="center"
+      sx={{
+        margin: "20px 30% 0 30%",
+        textShadow:
+        "2px 2px 0 #F12585, -2px -2px 0 #F12585, 2px -2px 0 #F12585, -2px 2px 0 #F12585",
+      }}
+      >
+      Will you be my valentine?
+      </Typography>
+      <Box
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          marginTop: "70%",
+        }}
+      >
+        <Button text="Yes" onClick={handleOnClick} sx={{ marginBottom: "10px" }} />
+        <Button text="No" onClick={handleOnClick} />
+      </Box>
+    </BackgroundContainer>
   );
 };
 
