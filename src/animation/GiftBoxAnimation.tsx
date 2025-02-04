@@ -11,13 +11,15 @@ interface State {
   jump: string;
   rotated: string;
   rotating: string;
+  animated: string;
 }
 
 const init_state: State = {
   move: "move",
   jump: "",
   rotated: "",
-  rotating: ""
+  rotating: "",
+  animated: ""
 };
 
 const reducer = (state: State, new_state: Partial<State>): State => ({
@@ -28,7 +30,7 @@ const reducer = (state: State, new_state: Partial<State>): State => ({
 const GiftBoxAnimation: React.FC = () => {
   const [state, setState] = useReducer(reducer, init_state);
 
-  const { move, rotating, rotated, jump } = state;
+  const { move, rotating, rotated, jump, animated } = state;
 
   const animate = () => {
     const isDone = rotated === "rotated";
@@ -39,7 +41,8 @@ const GiftBoxAnimation: React.FC = () => {
         setState({ jump: "jump" });
       }, 300);
       setTimeout(() => {
-        setState({ rotated: "rotated" });
+        setState({ rotated: "rotated", animated: "animated" });
+        console.log("Tickets animation triggered");
       }, 1000);
     } else {
       setState(init_state);
@@ -52,7 +55,7 @@ const GiftBoxAnimation: React.FC = () => {
     <div className="App">
       <Confetti open={jump === "jump"} />
       <div className="img-container">
-        <img className={`tickets ${jump}`} src={tickets} alt="tickets" />
+        <img className={`tickets ${animated}`} src={tickets} alt="tickets" />
         <button className="box" onClick={animate}>
           <img src={box} alt="box" />
         </button>

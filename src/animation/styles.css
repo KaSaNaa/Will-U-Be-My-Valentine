@@ -25,14 +25,17 @@ body {
 .tickets {
   position: absolute;
   left: 50%;
+  top: 10%;
   transform: translate(-50%) scale(0.1); /* Start small */
   bottom: 0;
-  z-index: -1;
-  transition: transform 1s ease-in-out; /* Smooth transition */
+  z-index: 10; /* Ensure it's above other elements */
+  opacity: 0; /* Start invisible */
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out; /* Smooth transition */
 }
 
 .tickets.animated {
   transform: translate(-50%, -200px) scale(1); /* Move up and scale up */
+  opacity: 1; /* Fade in */
 }
 
 .lid {
