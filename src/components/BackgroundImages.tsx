@@ -4,7 +4,7 @@ const BackgroundImages: React.FC = () => {
   return (
     <>
       <img
-        src="/assets/bow.png"
+        src="/public/assets/bow.png"
         alt="Bow"
         style={{
           position: "absolute",
@@ -16,7 +16,7 @@ const BackgroundImages: React.FC = () => {
         }}
       />
       <img
-        src="/assets/bear.png"
+        src="/public/assets/bear.png"
         alt="Teddy"
         style={{
           position: "absolute",
@@ -27,7 +27,7 @@ const BackgroundImages: React.FC = () => {
         }}
       />
       <img
-        src="/assets/heart.png"
+        src="/public/assets/heart.png"
         alt="Heart"
         style={{
           position: "absolute",

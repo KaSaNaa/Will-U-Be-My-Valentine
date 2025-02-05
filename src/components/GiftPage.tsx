@@ -15,7 +15,7 @@ const GiftPage: React.FC = () => {
   };
 
   useEffect(() => {
-    const audio = new Audio("/assets/song.mp3");
+    const audio = new Audio("/public/assets/song.mp3");
     audio.play();
   }, []);
 

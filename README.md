@@ -4,7 +4,7 @@
 
 This project is a digital gift that you can customize with your own images and messages. It includes animations, interactive elements, and a playful design to make your gift special.
 
-- Simply replace the images in the `/public/assets/` directory with your own.
+- Simply replace the images in the `/public/public/assets/` directory with your own.
 - Any improvements are happily welcomed. Feel free to contribute.
 
 ## Features
