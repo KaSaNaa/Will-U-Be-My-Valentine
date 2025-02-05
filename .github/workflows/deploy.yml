@@ -23,7 +23,7 @@ jobs:
 
     - name: Build the project
       env:
-        VITE_PUBLIC_URL: ${{ env.VITE_PUBLIC_URL }}
+        VITE_PUBLIC_URL: ${{ vars.VITE_PUBLIC_URL }}
       run: npm run build
 
     - name: Deploy to GitHub Pages
