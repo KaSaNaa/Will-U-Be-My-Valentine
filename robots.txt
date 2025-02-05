@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://KaSaNaa.github.io/will-u-be-my-valentine/sitemap.xml
