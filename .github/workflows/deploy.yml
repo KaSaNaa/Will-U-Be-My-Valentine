@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - master
+      - master  # or the branch you want to deploy from
 
 jobs:
   build:
@@ -24,8 +24,8 @@ jobs:
     - name: Build the project
       run: npm run build
 
-    - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@v4.0.0
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.TOKEN }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
