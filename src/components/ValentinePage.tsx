@@ -25,18 +25,18 @@ const ValentinePage: React.FC<ValentinePageProps> = ({
     setResponse(response);
     if (response === "yes") {
       navigator.vibrate(200);
-      const happyAudio = new Audio({`${process.env.PUBLIC_URL}/happy.mp3`});
+      const happyAudio = new Audio(`${process.env.PUBLIC_URL}/happy.mp3`);
       happyAudio.play();
       happyAudio.onended = onYesClick || null;
     } else if (response === "no") {
       navigator.vibrate([200, 100, 200]);
-      const cryingAudio = new Audio({`${process.env.PUBLIC_URL}/crying.mp3`});
+      const cryingAudio = new Audio(`${process.env.PUBLIC_URL}/crying.mp3`);
       if (onNoClick) {
         onNoClick();
       }
       cryingAudio.play();
       cryingAudio.onended = () => {
-        const cryingAudio2 = new Audio({`${process.env.PUBLIC_URL}/crying.mp3`});
+        const cryingAudio2 = new Audio(`${process.env.PUBLIC_URL}/crying.mp3`);
         cryingAudio2.play();
         
       };

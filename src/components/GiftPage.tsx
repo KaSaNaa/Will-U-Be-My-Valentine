@@ -15,7 +15,7 @@ const GiftPage: React.FC = () => {
   };
 
   useEffect(() => {
-    const audio = new Audio({`${process.env.PUBLIC_URL}/song.mp3`});
+    const audio = new Audio(`${process.env.PUBLIC_URL}/song.mp3`);
     audio.play();
   }, []);
 
