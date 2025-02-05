@@ -1,10 +1,10 @@
 import React, { useReducer } from "react";
 import "./styles.css";
-
-import box from "/public/assets/box.png";
-import boxLid from "/public/assets/lid.png";
-import tickets from "/public/assets/tickets.png";
 import Confetti from "./confetti/Confetti";
+
+const box = process.env.PUBLIC_URL + "/box.png";
+const boxLid = process.env.PUBLIC_URL + "/lid.png";
+const tickets = process.env.PUBLIC_URL + "/tickets.png";
 
 interface State {
   move: string;
