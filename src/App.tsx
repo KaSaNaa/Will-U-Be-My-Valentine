@@ -21,8 +21,8 @@ const App: React.FC<AppProps> = ({ setAccessGranted }) => {
   return (
     <ValentinePage
       questionText="Will you be my valentine?"
-      yesGif={`${process.env.PUBLIC_URL}/happy.gif`}
-      noGif={`${process.env.PUBLIC_URL}/crying.gif`}
+      yesGif={`${import.meta.env.PUBLIC_URL}/happy.gif`}
+      noGif={`${import.meta.env.PUBLIC_URL}/crying.gif`}
       onYesClick={handleYesClick}
       onNoClick={handleNoClick}
     />
