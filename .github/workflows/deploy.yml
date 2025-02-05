@@ -21,6 +21,9 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Print environment variable
+      run: "echo 'VITE_PUBLIC_URL is set to: $VITE_PUBLIC_URL'"
+
     - name: Build the project
       env:
         VITE_PUBLIC_URL: ${{ env.VITE_PUBLIC_URL }}
