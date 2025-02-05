@@ -15,6 +15,12 @@ This project is a digital gift that you can customize with your own images and m
 - **Confetti Animation**: Celebrate with a burst of confetti.
 - **Customizable Messages**: Personalize the messages displayed.
 
+<div>
+  <img src="UI/1.png" alt="UI1" width="200">
+  <img src="UI/2.png" alt="UI1" width="200">
+  <img src="UI/3.png" alt="UI1" width="200">
+</div>
+
 ## Getting Started
 
 1. Clone the repository:
